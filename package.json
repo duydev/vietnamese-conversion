@@ -1,6 +1,6 @@
 {
   "name": "vietnamese-conversion",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Vietnamese conversion",
   "main": "/dist/index.js",
   "types": "/dist/index.d.ts",
@@ -10,8 +10,9 @@
   "scripts": {
     "build": "tsc --build",
     "clean": "tsc --build --clean",
-    "prepare": "npm run build",
-    "publish": "npm publish"
+    "prepare": "npm run test && npm run build",
+    "publish": "npm publish",
+    "test": "mocha -r ts-node/register test/**.ts"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,11 @@
   },
   "homepage": "https://github.com/duydev/vietnamese-conversion#readme",
   "devDependencies": {
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^9.0.0",
+    "chai": "^4.3.4",
+    "mocha": "^9.0.2",
+    "ts-node": "^10.1.0",
     "typescript": "^4.3.5"
   }
 }
