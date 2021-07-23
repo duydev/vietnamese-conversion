@@ -1,12 +1,8 @@
-import { expect } from 'chai';
-import VietnameseConversion, {
-  toUnicode,
-  toVNI,
-  toTCVN3,
-  toVIQR
-} from '../src';
+const { expect } = require('chai');
+const VietnameseConversion = require('../dist');
+const { toUnicode, toVNI, toTCVN3, toVIQR } = require('../dist');
 
-describe(`Vietnamese conversion`, () => {
+describe(`dist - Vietnamese conversion`, () => {
   it(`should throw invalid charset when init`, () => {
     expect(() => {
       const conversion = new VietnameseConversion('Xin chào các bạn', 'abc');

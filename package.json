@@ -12,7 +12,7 @@
     "build": "tsc --build",
     "clean": "tsc --build --clean",
     "publish": "npm publish",
-    "test": "nyc mocha -r ts-node/register tests/**.test.ts"
+    "test": "nyc mocha -r ts-node/register tests/**.test.{ts,js}"
   },
   "repository": {
     "type": "git",

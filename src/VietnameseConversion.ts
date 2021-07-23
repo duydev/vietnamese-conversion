@@ -19,7 +19,7 @@ export class VietnameseConversion implements VietnameseConversionInterface {
   private isValidCharset(charset: string) {
     const charsetNames = Object.keys(this._charsets);
 
-    return charsetNames.includes(charset.toUpperCase());
+    return charsetNames.indexOf(charset.toUpperCase()) > -1;
   }
 
   private getCharsArray(charset: string): string[] {
