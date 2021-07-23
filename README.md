@@ -1,4 +1,4 @@
-# Vietnamese charset conversion / Công cụ chuyển đổi bảng mã tiêng Việt
+# Vietnamese charset conversion / Công cụ chuyển đổi bảng mã tiếng Việt
 
 - Support conversion between charsets: Unicode, VNI, TCVN3, VIQR
 - Hỗ trợ chuyển đổi qua lại giữa các bảng mã Unicode, VNI, TCVN3, VIQR.
