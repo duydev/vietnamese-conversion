@@ -18,7 +18,7 @@ $ yarn add vietnamese-conversion
 /**
  * Class style
  */
-const VietnameseConversion = require('vietnamese-conversion');
+const { VietnameseConversion } = require('vietnamese-conversion');
 
 const conversion = new VietnameseConversion('Xin chào các bạn', 'unicode');
 const output = conversion.toCharset('vni');
