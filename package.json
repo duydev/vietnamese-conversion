@@ -1,6 +1,6 @@
 {
   "name": "vietnamese-conversion",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Vietnamese conversion",
   "main": "/dist/index.js",
   "types": "/dist/index.d.ts",
@@ -12,7 +12,7 @@
     "build": "tsc --build",
     "clean": "tsc --build --clean",
     "publish": "npm publish",
-    "test": "nyc mocha -r ts-node/register tests/**.test.ts"
+    "test": "nyc mocha -r ts-node/register tests/**.test.{ts,js}"
   },
   "repository": {
     "type": "git",

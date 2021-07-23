@@ -1,12 +1,13 @@
 import { expect } from 'chai';
-import VietnameseConversion, {
+import {
+  VietnameseConversion,
   toUnicode,
   toVNI,
   toTCVN3,
   toVIQR
 } from '../src';
 
-describe(`Vietnamese conversion`, () => {
+describe(`src - Vietnamese conversion`, () => {
   it(`should throw invalid charset when init`, () => {
     expect(() => {
       const conversion = new VietnameseConversion('Xin chào các bạn', 'abc');
