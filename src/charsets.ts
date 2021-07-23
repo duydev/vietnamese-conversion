@@ -1,4 +1,6 @@
-export const UNICODE: string[] = [
+import { Charset, Charsets } from './types';
+
+const UNICODE: Charset = [
   'À',
   'Á',
   'Â',
@@ -135,7 +137,7 @@ export const UNICODE: string[] = [
   'ỹ'
 ];
 
-export const VNI: string[] = [
+const VNI: Charset = [
   'AØ',
   'AÙ',
   'AÂ',
@@ -272,7 +274,7 @@ export const VNI: string[] = [
   'yõ'
 ];
 
-export const TCVN3: string[] = [
+const TCVN3: Charset = [
   'Aµ',
   'A¸',
   '¢',
@@ -409,7 +411,7 @@ export const TCVN3: string[] = [
   'ü'
 ];
 
-export const VIQR: string[] = [
+const VIQR: Charset = [
   'A`',
   "A'",
   'A^',
@@ -545,3 +547,12 @@ export const VIQR: string[] = [
   'Y~',
   'y~'
 ];
+
+const CHARSETS: Charsets = {
+  UNICODE,
+  VNI,
+  TCVN3,
+  VIQR
+};
+
+export default CHARSETS;
