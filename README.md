@@ -1,5 +1,7 @@
 # Vietnamese charset conversion / Công cụ chuyển đổi bảng mã tiếng Việt
 
+[![CI](https://github.com/duydev/vietnamese-conversion/actions/workflows/main.yml/badge.svg)](https://github.com/duydev/vietnamese-conversion/actions/workflows/main.yml)
+
 - Support conversion between charsets: Unicode, VNI, TCVN3, VIQR
 - Hỗ trợ chuyển đổi qua lại giữa các bảng mã Unicode, VNI, TCVN3, VIQR.
 
