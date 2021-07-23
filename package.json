@@ -22,7 +22,12 @@
   "keywords": [
     "vietnamese",
     "typing",
-    "conversion"
+    "conversion",
+    "conversion",
+    "unicode",
+    "vni",
+    "tcvn3",
+    "viqr"
   ],
   "author": "Tran Nhat Duy <duytn.hcm@gmail.com>",
   "license": "MIT",
