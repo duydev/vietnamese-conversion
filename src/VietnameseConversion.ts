@@ -31,6 +31,10 @@ export class VietnameseConversion implements VietnameseConversionInterface {
       throw Error('Charset is not valid');
     }
 
+    if (this._chartset === charset.toUpperCase()) {
+      return this._text;
+    }
+
     const fromCharsArray = this.getCharsArray(this._chartset);
     const toCharsArray = this.getCharsArray(charset.toUpperCase());
     const countChars = fromCharsArray.length;
