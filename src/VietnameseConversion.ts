@@ -16,19 +16,23 @@ export class VietnameseConversion implements VietnameseConversionInterface {
     this._chartset = charset.toUpperCase();
   }
 
-  isValidCharset(charset: string) {
+  private isValidCharset(charset: string) {
     const charsetNames = Object.keys(this._charsets);
 
     return charsetNames.includes(charset.toUpperCase());
   }
 
-  getCharsArray(charset: string): string[] {
+  private getCharsArray(charset: string): string[] {
     return this._charsets[charset];
   }
 
   toCharset(charset: string): string {
     if (!this.isValidCharset(charset)) {
       throw Error('Charset is not valid');
+    }
+
+    if (this._chartset === charset.toUpperCase()) {
+      return this._text;
     }
 
     const fromCharsArray = this.getCharsArray(this._chartset);
