@@ -11,7 +11,7 @@
     "prebuild": "rm -rf ./dist",
     "build": "tsc --build",
     "clean": "tsc --build --clean",
-    "prepare": "npm run test && npm run build",
+    "prepublish": "npm run test && npm run build",
     "publish": "npm publish",
     "test": "nyc mocha -r ts-node/register tests/**.test.ts"
   },
