@@ -34,6 +34,10 @@ jobs:
       - name: Run a one-line script
         run: npm install
 
+      # Test code
+      - name: Test code
+        run: npm run test
+        
       # Build code
       - name: Build code
         run: npm run build
