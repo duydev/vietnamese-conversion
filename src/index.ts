@@ -1,4 +1,2 @@
-import VietnameseConversion from './VietnameseConversion';
+export { default as VietnameseConversion } from './VietnameseConversion';
 export * from './functions';
-
-export default VietnameseConversion;

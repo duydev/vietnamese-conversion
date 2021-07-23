@@ -1,6 +1,11 @@
 const { expect } = require('chai');
-const VietnameseConversion = require('../dist');
-const { toUnicode, toVNI, toTCVN3, toVIQR } = require('../dist');
+const {
+  VietnameseConversion,
+  toUnicode,
+  toVNI,
+  toTCVN3,
+  toVIQR
+} = require('../dist');
 
 describe(`dist - Vietnamese conversion`, () => {
   it(`should throw invalid charset when init`, () => {

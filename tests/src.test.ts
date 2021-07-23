@@ -1,5 +1,6 @@
 import { expect } from 'chai';
-import VietnameseConversion, {
+import {
+  VietnameseConversion,
   toUnicode,
   toVNI,
   toTCVN3,
