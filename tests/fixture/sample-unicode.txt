@@ -1,0 +1,17 @@
+Tiếng Việt (Vietnamese) là một ngôn ngữ thuộc nhóm ngôn ngữ Nam Á, được sử dụng chủ yếu tại Việt Nam, nơi nó có vị trí là ngôn ngữ chính thức. Nó cũng là ngôn ngữ mẹ đẻ của người Việt (hay còn gọi là người Kinh) – cộng đồng dân tộc chiếm đa số ở Việt Nam.
+
+Tiếng Việt hiện đại sử dụng bảng chữ cái Latinh, với các dấu thanh biểu thị thanh điệu. Người Việt gọi tiếng nói của mình là tiếng Việt, tiếng Kinh hay Việt ngữ. Tiếng Việt là ngôn ngữ mẹ đẻ của khoảng 85% dân cư Việt Nam, cùng với hơn 4 triệu Việt kiều.
+
+Các đặc điểm chính của tiếng Việt:
+- Thanh điệu: à, á, ả, ã, ạ, â, ă, ê, ô, ơ, ư, đ
+- Sử dụng chữ viết Latin với dấu thanh
+- Từ không biến đổi hình thái, không chia theo số, giống, cách
+- Cách diễn đạt thời gian dựa vào các từ phụ trợ
+
+Các dấu thanh của tiếng Việt gồm:
+Không dấu: a, e, i, o, u
+Dấu huyền: à, è, ì, ò, ù
+Dấu sắc: á, é, í, ó, ú
+Dấu hỏi: ả, ẻ, ỉ, ỏ, ủ
+Dấu ngã: ã, ẽ, ĩ, õ, ũ
+Dấu nặng: ạ, ẹ, ị, ọ, ụ 
