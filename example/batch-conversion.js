@@ -4,14 +4,12 @@ const path = require('path');
 
 console.log('=== Ví dụ về chuyển đổi hàng loạt ===\n');
 
-// Tạo thư mục tạm để lưu kết quả
 const outputDir = path.join(__dirname, 'output');
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir);
   console.log(`Đã tạo thư mục: ${outputDir}`);
 }
 
-// Danh sách các văn bản mẫu để chuyển đổi
 const sampleTexts = [
   {
     name: 'vni_sample.txt',
@@ -32,27 +30,22 @@ Ng­êi ¬i, ng­êi ¬i, TiÕng ViÖt cßn, n­íc ta cßn!`,
   }
 ];
 
-// Tạo các file mẫu
 sampleTexts.forEach(sample => {
   const filePath = path.join(__dirname, sample.name);
   fs.writeFileSync(filePath, sample.content);
   console.log(`Đã tạo file mẫu ${sample.name}`);
 });
 
-// Hàm chuyển đổi file
 function convertFile(filePath, charset) {
   console.log(`\nChuyển đổi file ${path.basename(filePath)} (${charset})...`);
   
   try {
-    // Đọc nội dung file
     const content = fs.readFileSync(filePath, 'utf8');
     console.log(`Nội dung gốc (${charset.toUpperCase()}):\n${content}`);
     
-    // Chuyển đổi sang Unicode
     const unicodeContent = toUnicode(content, charset);
     console.log(`\nNội dung sau khi chuyển đổi (UNICODE):\n${unicodeContent}`);
     
-    // Lưu kết quả
     const outputPath = path.join(outputDir, `${path.basename(filePath, '.txt')}_unicode.txt`);
     fs.writeFileSync(outputPath, unicodeContent);
     console.log(`Đã lưu kết quả vào file: ${outputPath}`);
@@ -64,14 +57,12 @@ function convertFile(filePath, charset) {
   }
 }
 
-// Thực hiện chuyển đổi từng file mẫu
 console.log('\n=== Bắt đầu chuyển đổi ===');
 const results = sampleTexts.map(sample => {
   const filePath = path.join(__dirname, sample.name);
   return convertFile(filePath, sample.charset);
 });
 
-// Tổng kết kết quả
 console.log('\n=== Kết quả chuyển đổi hàng loạt ===');
 console.log(`Tổng số file: ${sampleTexts.length}`);
 console.log(`Chuyển đổi thành công: ${results.filter(r => r.success).length}`);

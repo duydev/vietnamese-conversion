@@ -2,7 +2,6 @@ const { toUnicode, toVNI, toTCVN3, toVIQR } = require('../dist');
 
 console.log('=== Ví dụ cơ bản về chuyển đổi bảng mã tiếng Việt ===\n');
 
-// Các văn bản mẫu trong các bảng mã khác nhau
 const unicodeText = 'Tiếng Việt rất hay';
 const vniText = 'Tieáng Vieät raát hay';
 const tcvn3Text = 'TiÕng ViÖt rÊt hay';
