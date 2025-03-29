@@ -1,12 +1,22 @@
 import { Charsets, CharsetName, CharsetNameString, VietnameseConversionInterface } from './types';
 import CHARSETS from './charsets';
 
+/**
+ * Class for converting Vietnamese text between different character sets
+ * Implements the VietnameseConversionInterface
+ */
 export class VietnameseConversion implements VietnameseConversionInterface {
   private _charsets: Charsets = CHARSETS;
   private _text: string;
   private _charset: string;
   private _regexCache: Map<string, RegExp> = new Map();
 
+  /**
+   * Creates a new VietnameseConversion instance
+   * @param text - The Vietnamese text to be converted
+   * @param charset - The character set of the input text
+   * @throws Error if the charset is not valid
+   */
   constructor(text: string, charset: CharsetNameString | string) {
     if (text === null || text === undefined) {
       this._text = '';
@@ -21,6 +31,11 @@ export class VietnameseConversion implements VietnameseConversionInterface {
     this._charset = charset.toUpperCase();
   }
 
+  /**
+   * Checks if the provided charset is valid
+   * @param charset - The charset to validate
+   * @returns True if the charset is valid, false otherwise
+   */
   private isValidCharset(charset: string): boolean {
     if (!charset) return false;
 
@@ -28,10 +43,20 @@ export class VietnameseConversion implements VietnameseConversionInterface {
     return charsetNames.indexOf(charset.toUpperCase()) > -1;
   }
 
+  /**
+   * Gets the character array for a specific charset
+   * @param charset - The charset to get characters for
+   * @returns Array of characters for the specified charset
+   */
   private getCharsArray(charset: string): string[] {
     return this._charsets[charset as keyof typeof CharsetName];
   }
 
+  /**
+   * Gets a cached RegExp object for a character
+   * @param char - The character to create a RegExp for
+   * @returns A RegExp object for the character
+   */
   private getRegExp(char: string): RegExp {
     if (this._regexCache.has(char)) {
       return this._regexCache.get(char)!;
@@ -44,6 +69,11 @@ export class VietnameseConversion implements VietnameseConversionInterface {
     return re;
   }
 
+  /**
+   * Gets a cached RegExp object for a placeholder
+   * @param index - The index of the placeholder
+   * @returns A RegExp object for the placeholder
+   */
   private getPlaceholderRegExp(index: number): RegExp {
     const placeholder = `::${index}::`;
 
@@ -57,18 +87,38 @@ export class VietnameseConversion implements VietnameseConversionInterface {
     return re;
   }
 
+  /**
+   * Escapes special characters in a string for use in a RegExp
+   * @param string - The string to escape
+   * @returns The escaped string
+   */
   private escapeRegExp(string: string): string {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
 
+  /**
+   * Gets the current charset of the text
+   * @returns The current charset name
+   */
   getCharset(): CharsetNameString | string {
     return this._charset.toLowerCase() as CharsetNameString;
   }
 
+  /**
+   * Gets the current text
+   * @returns The current text
+   */
   getText(): string {
     return this._text;
   }
 
+  /**
+   * Creates a combined character with diacritics from base and tone patterns
+   * @param basePattern - The base pattern (e.g., "a^")
+   * @param tonePattern - The tone pattern (e.g., "a'")
+   * @param viqrToUnicodeMap - Mapping from VIQR to Unicode characters
+   * @returns The combined Unicode character or null if combination fails
+   */
   private createDiacriticCombination(
     basePattern: string,
     tonePattern: string,
@@ -95,6 +145,12 @@ export class VietnameseConversion implements VietnameseConversionInterface {
     }
   }
 
+  /**
+   * Special conversion method from VIQR to Unicode
+   * Handles complex character combinations with diacritics
+   * @param viqrText - The VIQR text to convert
+   * @returns The converted Unicode text
+   */
   public viqrToUnicodeSpecial(viqrText: string): string {
     if (!viqrText) return '';
 
@@ -145,6 +201,12 @@ export class VietnameseConversion implements VietnameseConversionInterface {
     return result;
   }
 
+  /**
+   * Converts text to the specified character set
+   * @param charset - The target character set
+   * @returns The converted text in the target charset
+   * @throws Error if the charset is not valid
+   */
   toCharset(charset: CharsetNameString | string): string {
     if (!this.isValidCharset(charset)) {
       throw Error('Charset is not valid');
